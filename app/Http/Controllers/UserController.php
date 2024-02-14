@@ -12,6 +12,6 @@ class UserController extends Controller
     }    
 
     public function store(StoreUserRequest $request) {
-        return redirect('/users');
+        return view('create_user');
     }
 }

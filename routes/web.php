@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => '/users'], function () {
     Route::get("/new", [UserController::class, 'create']);
+    Route::post("/", [UserController::class, 'store']);
 });
