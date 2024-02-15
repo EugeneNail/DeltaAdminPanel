@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -23,12 +24,22 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $name = uniqid().'.jpg';
+        $file = UploadedFile::fake()->image($name, 300, 300)->size(2048);
+        $file->storeAs('public',$name, 'local');
+
         return [
-            'name' => fake()->name(),
+            'name' => fake()->firstName(),
+            'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => fake()->bothify('??#????#??#?'),
             'remember_token' => Str::random(10),
+            'patronymic' => fake()->firstName() . 'ович',
+            'phone_number' => fake()->numerify('8 ### ###-##-##'),
+            'login' => fake()->word(),
+            'photo_path' => $name,
+            'born_at' => fake()->date()
         ];
     }
 

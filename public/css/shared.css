@@ -13,7 +13,7 @@ body {
 .page {
     padding: 60px;
     display: grid;
-    min-width: 100%;
+    min-width: fit-content;
     min-height: 100vh;
 }
 
@@ -84,12 +84,15 @@ body {
 }
 
 .button {
+    display: block;
     border: none;
     outline: none;
     background: #24a0ed;
     cursor: pointer;
     color: white;
-    padding: 10px;
+    padding: 5px 10px;
+    width: fit-content;
+    height: fit-content;
     border-radius: 5px;
     text-decoration: none;
 }
@@ -106,7 +109,9 @@ body {
 }
 
 .button:hover {
+    text-decoration: none;
     background: #1d86c7;
+    color: white;
 }
 
 .button:focus {
@@ -114,11 +119,14 @@ body {
 }
 
 .user-list {
-    border-radius: 20px;
     background: white;
     overflow-x: scroll;
     min-width: 1000px;
     border-collapse: collapse;
+}
+
+.user-list * {
+    font-size: 14px;
 }
 
 .user-list th {
@@ -130,4 +138,14 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     padding: 3px 10px;
+}
+
+.new-user-button {
+    margin: 30px;
+}
+
+nav {
+    margin: 0 auto;
+    margin-top: 60px;
+    width: fit-content;
 }

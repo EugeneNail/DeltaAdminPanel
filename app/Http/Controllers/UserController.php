@@ -24,6 +24,11 @@ class UserController extends Controller
         return redirect("/users/$user->id");
     }
 
+    public function index() {
+        $users = User::paginate(50);
+        return view('pages.index_users', ['users' => $users]);
+    }
+
     public function destroy(User $user) {
         $user->delete();
 
