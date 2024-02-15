@@ -18,11 +18,11 @@ class UserController extends Controller
 
 
     public function store(StoreUserRequest $request) {
-        $user = User::create($request->validated() + [
+        User::create($request->validated() + [
             'photo_path' => $this->savePhoto($request->file('photo'))
         ]);
 
-        return redirect("/users/$user->id");
+        return redirect("/users");
     }
 
 

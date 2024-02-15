@@ -1,6 +1,6 @@
 <form class="form form_horizontal" action="{{$action ?? route($route, $user->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
-    @method($method)
+    @method($method ?? 'POST')
     <h1 class="form__title">{{$title}}</h1>
     <div class="form__horizontal-wrapper">
 
