@@ -6,10 +6,14 @@
     font-family: Arial;
 }
 
-.page {
+body {
     background: #f3f3f5;
+}
+
+.page {
+    padding: 60px;
     display: grid;
-    width: 100%;
+    min-width: 100%;
     min-height: 100vh;
 }
 
@@ -87,10 +91,10 @@
     color: white;
     padding: 10px;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .button_light {
-    text-decoration: none;
     color: #24a0ed;
     background: none;
 }
@@ -107,4 +111,23 @@
 
 .button:focus {
     background: #1b78b3;
+}
+
+.user-list {
+    border-radius: 20px;
+    background: white;
+    overflow-x: scroll;
+    min-width: 1000px;
+    border-collapse: collapse;
+}
+
+.user-list th {
+    background: #eee;
+}
+
+.user-row td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 3px 10px;
 }

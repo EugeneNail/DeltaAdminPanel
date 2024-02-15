@@ -24,5 +24,9 @@ class UserController extends Controller
         return redirect("/users/$user->id");
     }
 
-    public function
+    public function destroy(User $user) {
+        $user->delete();
+
+        return redirect()->back();
+    }
 }
