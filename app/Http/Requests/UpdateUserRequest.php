@@ -23,6 +23,8 @@ class UpdateUserRequest extends FormRequest
      */
     public function rules(): array
     {
+        // если не менять логин/почту и не проставить в графу игнора идентификатор пользователя, то валидатор unique
+        // не даст сохранить пользователю его же значения почты и логина
         $userId = request()->route('user')->id;
 
         return [
