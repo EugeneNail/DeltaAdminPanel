@@ -106,6 +106,7 @@ body {
     background: none !important;
     outline: none;
     text-decoration: underline;
+    color: #24a0ed;
 }
 
 .button:hover {

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('patronymic');
             $table->string('phone_number');
-            $table->string('login');
+            $table->string('login')->unique();
             $table->string('photo_path');
             $table->timestamp('born_at');
         });

@@ -37,7 +37,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'patronymic' => fake()->firstName() . 'ович',
             'phone_number' => fake()->numerify('8 ### ###-##-##'),
-            'login' => fake()->word(),
+            'login' => fake()->lexify("????????????????????????"),
             'photo_path' => $name,
             'born_at' => fake()->date()
         ];
